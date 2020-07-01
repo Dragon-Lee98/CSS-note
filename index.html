@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 2px solid #ccc;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: #bfa;
+        }
+        /* 第一种方案,定位方式，缺点需要考虑子元素的宽度和高度 */
+        /* .content{
+            position: relative;
+        }
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+        } */
+
+        /* 第二种方案，定位方式，不需要考虑子元素的宽高，但是子元素要有宽高 */
+        /* 缺点：兼容性不好 */
+        /* .content{
+            position: relative;
+        }
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        } */
+        /* 第三种方案，弹性盒子 简便 缺点：兼容性不好*/
+        /* .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="content" id="content">
+        <div class="box" id="box">
+            我是box
+        </div>
+    </div>
+    <script>
+        // 第四种方案,需要给父盒子加相对定位relative
+        /* var content = document.getElementById('content'),
+            contentW = content.offsetWidth,
+            contentH = content.offsetHeight,
+            box = document.getElementById('box'),
+            boxW = box.offsetWidth,
+            boxH = box.offsetHeight;
+
+        box.style.position = 'absolute';
+        box.style.top = (contentW-boxW)/2+'px';
+        box.style.left = (contentH-boxH)/2+'px'; */
+    </script>
+</body>
+</html>
