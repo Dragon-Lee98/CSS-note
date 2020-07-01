@@ -45,7 +45,15 @@
             justify-content: center;
             align-items: center;
         } */
-
+        /* 第四种方案 缺点：父元素要变成table，并且确定宽度和高度。子元素变成文本*/
+        /* .content{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .box{
+            display: inline-block;
+        } */
     </style>
 </head>
 <body>
@@ -55,7 +63,7 @@
         </div>
     </div>
     <script>
-        // 第四种方案,需要给父盒子加相对定位relative
+        // 第五种方案,需要给父盒子加相对定位relative
         /* var content = document.getElementById('content'),
             contentW = content.offsetWidth,
             contentH = content.offsetHeight,
